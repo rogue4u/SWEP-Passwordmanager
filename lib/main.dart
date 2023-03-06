@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Folder Structure Added
 void main() {
   runApp(const MyApp());
 }
