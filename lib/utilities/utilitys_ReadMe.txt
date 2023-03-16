@@ -1,0 +1,1 @@
+Hier sind die Logischen komponenten, die ion der App verwendet werden.

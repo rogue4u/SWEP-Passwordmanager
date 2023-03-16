@@ -1,0 +1,1 @@
+Hier sind die einzelnen Bilder, die in der App verwendet werden.
