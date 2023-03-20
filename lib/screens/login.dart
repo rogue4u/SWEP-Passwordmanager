@@ -1,46 +1,53 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'vault.dart';
 
-final _formKey = GlobalKey<FormState>();
-
-var _passwordIsObscured = true;
-
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  _PasswordScreenState createState() => _PasswordScreenState();
+}
+
+class _PasswordScreenState extends State<LoginPage> {
+  final passwordController = TextEditingController();
+
+  void _navigateTovault(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const VaultPage()));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Form(
-        key: _formKey,
+      appBar: AppBar(
+        title: const Text('Password Screen'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextFormField(
-              //Eingabefeld
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please Enter the Masterpassword';
-                }
-                return null;
-              },
-              obscureText: _passwordIsObscured, // Sichtbarkeit
-              maxLines: 1, // Maximale Zeilen
+            TextField(
+              controller: passwordController,
+              decoration: const InputDecoration(
+                labelText: 'Password',
+                border: OutlineInputBorder(),
+              ),
+              obscureText: true,
             ),
+            const SizedBox(height: 16.0),
             ElevatedButton(
-              //Masterpasswort bestätigen Button
               onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Great!')),
-                  );
-                }
+                _navigateTovault(context);
+                // TODO: Implement button action
               },
-              child: const Text('Unlock'),
-            )
+              child: const Text('Login'),
+            ),
           ],
         ),
       ),
-    ));
+    );
   }
 }
