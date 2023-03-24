@@ -8,17 +8,22 @@ class VaultPage extends StatefulWidget {
 }
 
 class _VaultPageState extends State<VaultPage> {
+  var _tab = 1;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
-        length: 3,
+        length: _tab,
         child: Scaffold(
           appBar: AppBar(
             bottom: const TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.directions_car)),
                 Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.directions_bike)),
                 Tab(icon: Icon(Icons.directions_bike)),
               ],
             ),
