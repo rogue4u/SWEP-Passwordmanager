@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/screens/vault/desktop_vault.dart';
+import 'package:passwordmanager/responsive/responsiveVaultPage.dart';
+import 'package:passwordmanager/screens/login/tab_instance.dart';
 
-class MyDesktopLogin extends StatefulWidget {
-  const MyDesktopLogin({super.key});
+class DesktopLogin extends StatefulWidget {
+  const DesktopLogin({super.key});
 
   @override
-  State<MyDesktopLogin> createState() => _MyDesktopLoginState();
+  State<DesktopLogin> createState() => _DesktopLoginState();
 }
 
-class _MyDesktopLoginState extends State<MyDesktopLogin> {
+class _DesktopLoginState extends State<DesktopLogin> {
   final passwordController = TextEditingController();
 
   //Leitet nach Input weiter zur nächsten Seite
   void _navigateTovault(BuildContext context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => const DesktopVaultPage()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => VaultPage()));
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(title: const Text('Desktop View')),
+      appBar: AppBar(title: const Text('Desktop')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(

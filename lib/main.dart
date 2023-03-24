@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'screens/login/login.dart';
+import 'package:passwordmanager/tab_builder.dart';
 
-//Folder Structure Addeg
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-//
-  // This widget is the root of your application.
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: LoginPage(),
+      home: TabBuilder(),
     );
   }
 }

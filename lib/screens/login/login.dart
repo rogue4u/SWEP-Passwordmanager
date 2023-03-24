@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 const mobileMaxWidth = 430;
 const tabletMaxView = 1025;
 
-class ResponsiveLayout extends StatelessWidget {
+class ResponsiveLoginLayout extends StatelessWidget {
   final Widget mobileLogin;
   final Widget tabletLogin;
   final Widget desktopLogin;
 
-  const ResponsiveLayout(
+  const ResponsiveLoginLayout(
       {super.key,
       required this.mobileLogin,
       required this.tabletLogin,

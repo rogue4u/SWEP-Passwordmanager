@@ -15,10 +15,10 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: ResponsiveLayout(
-        mobileLogin: MyMobileLogin(),
-        tabletLogin: MyTabletLogin(),
-        desktopLogin: MyDesktopLogin(),
+      body: ResponsiveLoginLayout(
+        mobileLogin: MobileLogin(),
+        tabletLogin: TabletLogin(),
+        desktopLogin: DesktopLogin(),
       ),
     );
   }

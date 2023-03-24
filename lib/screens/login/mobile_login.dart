@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:passwordmanager/responsive/responsiveVaultPage.dart';
 
-class MyMobileLogin extends StatefulWidget {
-  const MyMobileLogin({super.key});
+class MobileLogin extends StatefulWidget {
+  const MobileLogin({super.key});
 
   @override
-  State<MyMobileLogin> createState() => _MyMobileLoginState();
+  State<MobileLogin> createState() => _MobileLoginState();
 }
 
-class _MyMobileLoginState extends State<MyMobileLogin> {
+class _MobileLoginState extends State<MobileLogin> {
   final passwordController = TextEditingController();
 
   //Leitet nach Input weiter zur nächsten Seite
   void _navigateTovault(BuildContext context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => const MyMobileLogin()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => VaultPage()));
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(title: const Text('Desktop View')),
+      appBar: AppBar(title: const Text('M O B I L E')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(

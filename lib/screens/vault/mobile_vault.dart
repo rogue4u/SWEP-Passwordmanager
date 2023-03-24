@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class MobileVaultPage extends StatefulWidget {
   const MobileVaultPage({super.key});
@@ -15,7 +13,9 @@ class _MobileVaultPageState extends State<MobileVaultPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DefaultTabController(
+        home: Scaffold(
+      appBar: AppBar(title: const Text('M O B I L E')),
+      body: DefaultTabController(
         length: _tab,
         child: Scaffold(
           appBar: AppBar(
@@ -27,6 +27,6 @@ class _MobileVaultPageState extends State<MobileVaultPage> {
           ),
         ),
       ),
-    );
+    ));
   }
 }
