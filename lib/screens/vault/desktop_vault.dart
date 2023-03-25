@@ -13,8 +13,6 @@ class _DesktopVaultPageState extends State<DesktopVaultPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(title: const Text('D E S K T O P')),
-    ));
+        home: Scaffold(appBar: AppBar(title: const Text('D E S K T O P'))));
   }
 }

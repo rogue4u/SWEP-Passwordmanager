@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/tab_builder.dart';
+import 'package:passwordmanager/responsive/responsiveLoginPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Flutter Demo',
-      home: TabBuilder(),
+      home: LoginPage(),
     );
   }
 }
