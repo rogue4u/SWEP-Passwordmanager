@@ -1,6 +1,6 @@
 import 'package:xml/xml.dart';
 
-class Item {
+class PasswordItem {
   String _titel;
   String _username;
   String _password;
@@ -8,11 +8,11 @@ class Item {
   String _link;
   String _notes;
 
-  Item(this._titel, this._username, this._password, this._email, this._link,
-      this._notes);
+  PasswordItem(this._titel, this._username, this._password, this._email,
+      this._link, this._notes);
 
-
-  factory 
-
-  factory Item(Map<String, dynamic> json) {}
+  factory PasswordItem.fromJSON(Map<String, dynamic> json) {
+    return PasswordItem(json["titel"], json["username"], json["password"],
+        json["email"], json["link"], json["notes"]);
+  }
 }
