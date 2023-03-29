@@ -1,5 +1,3 @@
-import 'package:xml/xml.dart';
-
 class PasswordItem {
   String _titel;
   String _username;
@@ -15,4 +13,12 @@ class PasswordItem {
     return PasswordItem(json["titel"], json["username"], json["password"],
         json["email"], json["link"], json["notes"]);
   }
+
+  // Getter Methods
+  get title => _titel;
+  get username => _username;
+  get passowrd => _password;
+  get email => _email;
+  get link => _link;
+  get notes => _notes;
 }

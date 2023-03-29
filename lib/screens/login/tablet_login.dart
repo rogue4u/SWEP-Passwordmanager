@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/responsive/responsiveVaultPage.dart';
+import 'package:passwordmanager/screens/responsive/responsiveVaultPage.dart';
 
 class TabletLogin extends StatefulWidget {
   const TabletLogin({super.key});

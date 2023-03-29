@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/responsive/responsiveVaultPage.dart';
+import 'package:passwordmanager/screens/responsive/responsiveVaultPage.dart';
 import 'package:passwordmanager/screens/login/tab_instance.dart';
 
 class DesktopLogin extends StatefulWidget {
