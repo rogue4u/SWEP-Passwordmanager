@@ -1,6 +1,92 @@
+scale 1000 height
+scale 1000 width
 @startuml ClassDiagram
 
-class Data {
+Main ..|> Vaultmanager
+Main ..|> UserInterfaceManager
+class Main {
+    - name : String
+    - width : int
+    - height : int
+    ---
+    - main()
+    - StartApp()
+}
+
+Vault ..|> Meta
+Vault ..|> Database
+class Vault {
+    - meta : Meta
+    - database : Database
+    ---
+    + Getter
+    + Setter
+
+    + GetValue() : DateDataEntry
+    + GetValue() : HistoryEntry
+    + GetValue() : Meta
+    + GetValue() : Group
+    + GetValue() : Entry
+    + GetValue() : Database
+    + SetValue() : DateDataEntry
+    + SetValue() : HistoryEntry
+    + SetValue() : Meta
+    + SetValue() : Group
+    + SetValue() : Entry
+    + SetValue() : Database
+}
+
+Meta ..|> DateDataEntry
+Meta ..|> HistoryEntry
+class Meta {
+    - version : String
+    - datedata : List<DateDataEntry>
+    - history : List<HistoryEntry>
+    ---
+    + Getter
+    + Setter
+}
+
+class DateDataEntry {
+    - id : int
+    - timestamp : DateTime
+    - changed : Bool
+    ---
+    + Getter
+    + Setter
+}
+
+class HistoryEntry {
+    - id : int
+    - type : String
+    - old : String
+    - new : String
+    ---
+    + Getter
+    + Setter
+}
+
+Database ..|> Group
+Database ..|> Entry
+class Database {
+    - groups : List<Group>
+    - entries : List<Entry>
+    ---
+    + Getter
+    + Setter
+}
+
+Group ..|> Entry
+class Group {
+    - name : String
+    - entries : List<Entry>
+    - subGroups : List<Group>
+    ---
+    + Getter
+    + Setter
+}
+
+class Entry {
     - title : String
     - username : String
     - password : String
@@ -8,7 +94,7 @@ class Data {
     - link : String
     - notes : String
     - icon : String
-    - tags : List
+    - tags : List<String>
     - logs : String
     ---
     + Getter
@@ -17,42 +103,86 @@ class Data {
     + HaveIBeenPawned
 }
 
+Vaultmanager ..|> FileIO
+Vaultmanager ..|> Vault
+Vaultmanager ..|> ServerHandler
+Vaultmanager ..|> InstanceBuilder
+class Vaultmanager {
+    + OpenVault(fileName : String, Masterpassword : String) : Vault
+    + SaveVault(vault : Vault, Masterpassword) : int
+    + GetVault()
+    + GetValue()
+    + SetValue()
+    + SetVault()
+}
+FileIO ..|> Crypto
 class FileIO {
-
+    - StreamWriterInstance : StreamWriter
+    - StreamReaderInstance : StreamReader
     ---
-
+    + InitNewFileIO(FullPath : string)
+    + ReadFile() : string
+    + WriteFile(content : string)
 }
 
-class Main {
-    
+class ServerHandler {
+    - activeConnection : TCPClient
+    - hostInstance : TCPServer
     ---
-
+    + OpenVault(fileName : String, Masterpassword : String) : Vault
+    + SaveVault(vault : Vault, Masterpassword) : int
 }
 
-class Cryption {
-
-    ---
-
+class InstanceBuilder {
+    + BuildInstance() : Vault
+    + DebuildInstance() : String
 }
 
+Crypto ..|> AES256
+class Crypto {
+    - Seed : []byte
+    ---
+    + Setter
+    + Encrypt() : String
+    + Decrypt() : String
+}
+
+interface AES256 {}
+
+UserInterfaceManager ..|> ResponsiveLayoutManager
+UserInterfaceManager ..|> LoginPage
+UserInterfaceManager ..|> VaultPage
+class UserInterfaceManager {
+
+}
+class LoginPage  {
+
+}
+class VaultPage {
+
+}
+ResponsiveLayoutManager ..|> MobileView
+ResponsiveLayoutManager ..|> TabletView
+ResponsiveLayoutManager ..|> DesktopView
 class ResponsiveLayoutManager {
     
     ---
 
 }
-
-class LoginPage  {
+class MobileView {
     
     ---
 
 }
-
-class VaultPage {
+class TabletView {
     
     ---
 
 }
+class DesktopView {
+    
+    ---
 
-
+}
 
 @enduml
