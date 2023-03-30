@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/vaultPage.dart';
 
+import '../../widgets/filePicker.dart';
+
 class TabletLogin extends StatefulWidget {
   const TabletLogin({super.key});
 
@@ -45,6 +47,16 @@ class _TabletLoginState extends State<TabletLogin> {
                     _navigateTovault(context);
                   },
                   child: const Text('Login'),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: FPicker(),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    print("LockBox Created");
+                  },
+                  child: const Text('New LockBox'),
                 ),
               ],
             ),

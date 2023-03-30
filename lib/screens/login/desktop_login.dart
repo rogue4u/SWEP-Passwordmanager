@@ -1,5 +1,8 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/vaultPage.dart';
+
+import '../../widgets/filePicker.dart';
 
 class DesktopLogin extends StatefulWidget {
   const DesktopLogin({super.key});
@@ -48,14 +51,9 @@ class _DesktopLoginState extends State<DesktopLogin> {
                   },
                   child: const Text('Login'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      print("Select Lockbox");
-                    },
-                    child: const Text('Select LockBox'),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: FPicker(),
                 ),
                 ElevatedButton(
                   onPressed: () {
