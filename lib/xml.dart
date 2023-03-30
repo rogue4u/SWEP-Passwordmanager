@@ -7,7 +7,6 @@ void build_xml() {
   b.processing('xml', 'version="1.0"');
   b.element('root', nest: () {
     b.element('meta', nest: () {
-      b.attribute('name', "");
       b.element('icondata', nest: () {
         b.element('iconentry', nest: () {
           b.attribute('name', 'FolderSimple.ico');
@@ -73,5 +72,11 @@ void build_xml() {
       });
     });
   });
-  print(b.buildDocument());
+  var out = b.buildDocument().toXmlString();
+  print(out);
+  var xmldoc = XmlDocument.parse(out);
+  var entries = xmldoc.findAllElements('entry');
+  var groups = xmldoc.findAllElements('group');
+  print(entries.toList()[0].getElement());
+  //https://medium.com/@imkiptoo/creating-dart-objects-from-xml-a-practical-guide-efaed03252c6
 }

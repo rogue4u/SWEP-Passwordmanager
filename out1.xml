@@ -1,0 +1,50 @@
+<root>
+    <meta version="">
+        <datedata>
+            <ref id="0" TimeStamp="" changed="false"/>
+            <ref id="1" TimeStamp="" changed="true"/>
+        </datedata>
+        <history>
+            <historyitem id="0" type="username" old="someusername" new="somenewusername"/>
+            <historyitem id="0" type="password" old="78wh0c9ucmß9w3889cwjd3w9jß9c8wm3c8" new="78wh0c9ucmß9w3889cwjd3w9jß9c8wm3c8"/>
+        </history>
+    </meta>
+    <database>
+        <group name="Internet">
+            <entry id="0" checksum="" username="" password="" icon="SomeIcon.ico">
+                <tags>
+                    <tag name="a"/>
+                    <tag name="b"/>
+                    <tag name="c"/>
+                </tags>
+                <info>This is a entry</info>
+            </entry>
+            <entry id="0" checksum="" username="" password="" icon="SomeIcon.ico">
+                <tags>
+                    <tag name="a"/>
+                    <tag name="b"/>
+                    <tag name="c"/>
+                </tags>
+                <info>This is a entry</info>
+            </entry>
+            <group name="SocialMedia">
+                <entry id="2" checksum="" username="" password="" icon="SomeIcon.ico">
+                    <tags>
+                        <tag name="a"/>
+                        <tag name="b"/>
+                        <tag name="c"/>
+                    </tags>
+                    <info>This is a entry</info>
+                </entry>
+                <entry id="3" checksum="" username="" password="" icon="SomeIcon.ico">
+                    <tags>
+                        <tag name="a"/>
+                        <tag name="b"/>
+                        <tag name="c"/>
+                    </tags>
+                    <info>This is a entry</info>
+                </entry>
+            </group>
+        </group>
+    </database>
+</root>

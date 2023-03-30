@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<root>
+	<meta>
+		<icondata>
+			<iconentry name="FolderSimple.ico">
+				<ref id="0" />
+				<ref id="1" />
+				<ref id="2" />
+				<ref id="3" />
+				<ref id="4" />
+				<ref id="5" />
+				<ref id="6" />
+				<ref id="7" />
+				<ref id="8" />
+				<ref id="9" />
+			</iconentry>
+		</icondata>
+		<datedata>
+			<ref id="0" TimeStamp="2023-03-30 18:08:06.486759" changed="false" />
+			<ref id="1" TimeStamp="2023-03-30 18:08:06.488260" changed="false" />
+			<ref id="2" TimeStamp="2023-03-30 18:08:06.488260" changed="false" />
+			<ref id="3" TimeStamp="2023-03-30 18:08:06.488260" changed="false" />
+			<ref id="4" TimeStamp="2023-03-30 18:08:06.488260" changed="false" />
+			<ref id="5" TimeStamp="2023-03-30 18:08:06.488260" changed="false" />
+			<ref id="6" TimeStamp="2023-03-30 18:08:06.488260" changed="false" />
+		</datedata>
+		<history>
+			<historyitem id="0" type="username" old="abcd" new="dcba" />
+			<historyitem id="1" type="username" old="abcd" new="dcba" />
+			<historyitem id="2" type="username" old="abcd" new="dcba" />
+			<historyitem id="3" type="username" old="abcd" new="dcba" />
+			<historyitem id="4" type="username" old="abcd" new="dcba" />
+			<historyitem id="5" type="username" old="abcd" new="dcba" />
+			<historyitem id="6" type="username" old="abcd" new="dcba" />
+			<historyitem id="7" type="username" old="abcd" new="dcba" />
+			<historyitem id="8" type="username" old="abcd" new="dcba" />
+			<historyitem id="9" type="username" old="abcd" new="dcba" />
+			<historyitem id="10" type="username" old="abcd" new="dcba" />
+			<historyitem id="11" type="username" old="abcd" new="dcba" />
+			<historyitem id="12" type="username" old="abcd" new="dcba" />
+			<historyitem id="13" type="username" old="abcd" new="dcba" />
+			<historyitem id="14" type="username" old="abcd" new="dcba" />
+			<historyitem id="15" type="username" old="abcd" new="dcba" />
+			<historyitem id="16" type="username" old="abcd" new="dcba" />
+			<historyitem id="17" type="username" old="abcd" new="dcba" />
+			<historyitem id="18" type="username" old="abcd" new="dcba" />
+			<historyitem id="19" type="username" old="abcd" new="dcba" />
+			<historyitem id="20" type="username" old="abcd" new="dcba" />
+			<historyitem id="21" type="username" old="abcd" new="dcba" />
+			<historyitem id="22" type="username" old="abcd" new="dcba" />
+			<historyitem id="23" type="username" old="abcd" new="dcba" />
+			<historyitem id="24" type="username" old="abcd" new="dcba" />
+		</history>
+	</meta>
+	<database>
+		<group id="1" name="some group name">
+			<entry id="0" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername" password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="1" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="2" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="3" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="4" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+		</group>
+		<group id="2" name="some other group name">
+			<entry id="0" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="1" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="2" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="3" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="4" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+			<entry id="5" checksum="abcdefghijklmnopqrstuvwxyz" username="someusername"
+				password="9whß3c8w9jc9w39dj">
+				<info>info text.</info>
+			</entry>
+		</group>
+	</database>
+</root>

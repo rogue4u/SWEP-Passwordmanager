@@ -1,0 +1,75 @@
+{
+    "Meta": {
+        "Version": "",
+        "DateData": [{
+                "Id": "0",
+                "TimeStamp": "",
+                "Changed": "false"
+            },
+            {
+                "Id": "1",
+                "TimeStamp": "",
+                "Changed": "true"
+            }
+        ],
+        "History": [{
+                "Id": "0",
+                "Type": "Username",
+                "Old": "someusername",
+                "New": "somenewusername"
+            },
+            {
+                "Id": "1",
+                "Type": "Password",
+                "Old": "78wh0c9ucmß9w3889cwjd3w9jß9c8wm3c8",
+                "New": "78wh0c9ucmß9w3889cwjd3w9jß9c8wm3c8"
+            }
+        ]
+    },
+    "Database": {
+        "Groud": {
+            "Name": "Internet",
+            "Entry": [{
+                    "Id": "0",
+                    "Checksum": "",
+                    "Username": "",
+                    "Password": "",
+                    "Icon": "SomeIcon.ico",
+                    "Tags": ["a","b","c"],
+                    "Info": "This is a Entry"
+                },
+                {
+                    "Id": "0",
+                    "Checksum": "",
+                    "Username": "",
+                    "Password": "",
+                    "Icon": "SomeIcon.ico",
+                    "Tags": ["a","b","c"],
+                    "Info": "This is a Entry"
+                }
+            ],
+            "Groud": {
+                "Name": "SocialMedia",
+                "Entry": [{
+                        "Id": "2",
+                        "Checksum": "",
+                        "Username": "",
+                        "Password": "",
+                        "Icon": "SomeIcon.ico",
+                        "Tags": ["a","b","c"],
+                        "Info": "This is a Entry"
+                    },
+                    {
+                        "Id": "3",
+                        "Checksum": "",
+                        "Username": "",
+                        "Password": "",
+                        "Icon": "SomeIcon.ico",
+                        "Tags": ["a","b","c"],
+                        "Info": "This is a Entry"
+                    }
+                ]
+            }
+        }
+    }
+}
