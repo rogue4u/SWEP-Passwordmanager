@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/login/mobile_login.dart';
-import 'package:passwordmanager/screens/responsive/loginResponsiveManager.dart';
+import 'package:passwordmanager/screens/login/loginResponsiveManager.dart';
 import 'package:passwordmanager/screens/login/tablet_login.dart';
 import 'package:passwordmanager/screens/login/desktop_login.dart';
 

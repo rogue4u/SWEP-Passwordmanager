@@ -1,0 +1,166 @@
+@startuml Klassendiagramm
+set namespaceSeparator ::
+
+class "passwordmanager::screens::login::loginResponsiveManager.dart::ResponsiveLoginLayout" {
+  +Widget mobileLogin
+  +Widget tabletLogin
+  +Widget desktopLogin
+  +Widget build()
+}
+
+"passwordmanager::screens::login::loginResponsiveManager.dart::ResponsiveLoginLayout" o-- "flutter::src::widgets::framework.dart::Widget"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "passwordmanager::screens::login::loginResponsiveManager.dart::ResponsiveLoginLayout"
+
+class "passwordmanager::screens::login::tablet_login.dart::TabletLogin" {
+  +State<TabletLogin> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::login::tablet_login.dart::TabletLogin"
+
+class "passwordmanager::screens::login::tablet_login.dart::_TabletLoginState" {
+  +TextEditingController passwordController
+  -void _navigateTovault()
+  +Widget build()
+}
+
+"passwordmanager::screens::login::tablet_login.dart::_TabletLoginState" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::login::tablet_login.dart::_TabletLoginState"
+
+class "passwordmanager::screens::login::mobile_login.dart::MobileLogin" {
+  +State<MobileLogin> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::login::mobile_login.dart::MobileLogin"
+
+class "passwordmanager::screens::login::mobile_login.dart::_MobileLoginState" {
+  +TextEditingController passwordController
+  -void _navigateTovault()
+  +Widget build()
+}
+
+"passwordmanager::screens::login::mobile_login.dart::_MobileLoginState" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::login::mobile_login.dart::_MobileLoginState"
+
+class "passwordmanager::screens::login::desktop_login.dart::DesktopLogin" {
+  +State<DesktopLogin> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::login::desktop_login.dart::DesktopLogin"
+
+class "passwordmanager::screens::login::desktop_login.dart::_DesktopLoginState" {
+  +TextEditingController passwordController
+  -void _navigateTovault()
+  +Widget build()
+}
+
+"passwordmanager::screens::login::desktop_login.dart::_DesktopLoginState" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::login::desktop_login.dart::_DesktopLoginState"
+
+class "passwordmanager::screens::login::loginPage.dart::LoginPage" {
+  +State<LoginPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::login::loginPage.dart::LoginPage"
+
+class "passwordmanager::screens::login::loginPage.dart::_LoginPageState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::login::loginPage.dart::_LoginPageState"
+
+class "passwordmanager::screens::vault::mobile_vault.dart::MobileVaultPage" {
+  +State<MobileVaultPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::vault::mobile_vault.dart::MobileVaultPage"
+
+class "passwordmanager::screens::vault::mobile_vault.dart::_MobileVaultPageState" {
+  -int _tab
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::vault::mobile_vault.dart::_MobileVaultPageState"
+
+class "passwordmanager::screens::vault::desktop_vault.dart::DesktopVaultPage" {
+  +State<DesktopVaultPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::vault::desktop_vault.dart::DesktopVaultPage"
+
+class "passwordmanager::screens::vault::desktop_vault.dart::_DesktopVaultPageState" {
+  +FileIO fileIO
+  +Future<List<Data>> getDataFromXML()
+  +Widget build()
+}
+
+"passwordmanager::screens::vault::desktop_vault.dart::_DesktopVaultPageState" o-- "passwordmanager::utilities::fileIO.dart::FileIO"
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::vault::desktop_vault.dart::_DesktopVaultPageState"
+
+class "passwordmanager::screens::vault::tablet_vault.dart::TabletVaultPage" {
+  +State<TabletVaultPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::vault::tablet_vault.dart::TabletVaultPage"
+
+class "passwordmanager::screens::vault::tablet_vault.dart::_TabletVaultPageState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::vault::tablet_vault.dart::_TabletVaultPageState"
+
+class "passwordmanager::screens::vault::vaultPage.dart::VaultPage" {
+  +State<VaultPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "passwordmanager::screens::vault::vaultPage.dart::VaultPage"
+
+class "passwordmanager::screens::vault::vaultPage.dart::_VaultPageState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "passwordmanager::screens::vault::vaultPage.dart::_VaultPageState"
+
+class "passwordmanager::screens::vault::vaultResponsiveManager.dart::ResponsiveVaultLayout" {
+  +Widget mobileVaultPage
+  +Widget tabletVaultPage
+  +Widget desktopVaultPage
+  +Widget build()
+}
+
+"passwordmanager::screens::vault::vaultResponsiveManager.dart::ResponsiveVaultLayout" o-- "flutter::src::widgets::framework.dart::Widget"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "passwordmanager::screens::vault::vaultResponsiveManager.dart::ResponsiveVaultLayout"
+
+class "passwordmanager::main.dart::MyApp" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "passwordmanager::main.dart::MyApp"
+
+class "passwordmanager::utilities::data.dart::Data" {
+  -String _titel
+  -String _username
+  -String _password
+  -String _email
+  -String _link
+  -String _notes
+  -dynamic _icon
+  -String _tags
+  -String _logs
+  +dynamic title
+  +dynamic username
+  +dynamic passowrd
+  +dynamic email
+  +dynamic link
+  +dynamic notes
+  +dynamic icon
+  +dynamic tags
+  +dynamic logs
+}
+
+class "passwordmanager::utilities::fileIO.dart::FileIO" {
+  +String lockBoxXML
+  +void printXML()
+}
+
+
+@enduml

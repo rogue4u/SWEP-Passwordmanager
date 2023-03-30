@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/utilities/PasswordItem.dart';
+import 'package:passwordmanager/utilities/data.dart';
 import 'package:xml/xml.dart' as xml;
 import 'package:passwordmanager/utilities/fileIO.dart';
 
@@ -13,14 +13,13 @@ class DesktopVaultPage extends StatefulWidget {
 class _DesktopVaultPageState extends State<DesktopVaultPage> {
   final FileIO fileIO = FileIO();
 
-  Future<List<PasswordItem>> getPasswordItemFromXML(
-      BuildContext context) async {
+  Future<List<Data>> getDataFromXML(BuildContext context) async {
     String xmlString = await DefaultAssetBundle.of(context)
         .loadString("assets/data/example.xml");
     var raw = xml.XmlDocument.parse(xmlString);
     var element = raw.findAllElements("item");
     return element.map((elements) {
-      return PasswordItem(
+      return Data(
           elements.findElements("titel").first.text,
           elements.findElements("username").first.text,
           elements.findElements("password").first.text,

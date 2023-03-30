@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PasswordItem {
+class Data {
   String _titel;
   String _username;
   String _password;
@@ -11,11 +11,11 @@ class PasswordItem {
   String _tags;
   String _logs;
 
-  PasswordItem(this._titel, this._username, this._password, this._email,
-      this._link, this._notes, this._icon, this._tags, this._logs);
+  Data(this._titel, this._username, this._password, this._email, this._link,
+      this._notes, this._icon, this._tags, this._logs);
 
-  factory PasswordItem.fromJSON(Map<String, dynamic> json) {
-    return PasswordItem(
+  factory Data.fromJSON(Map<String, dynamic> json) {
+    return Data(
         json["titel"],
         json["username"],
         json["password"],
@@ -37,10 +37,4 @@ class PasswordItem {
   get icon => _icon;
   get tags => _tags;
   get logs => _logs;
-
-  
-
-
-
-
 }
