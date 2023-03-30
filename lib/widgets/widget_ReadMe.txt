@@ -1,1 +1,0 @@
-Hier sind die einzelnen Widget Komponenten, welche für die Screen verwendet werden. 
