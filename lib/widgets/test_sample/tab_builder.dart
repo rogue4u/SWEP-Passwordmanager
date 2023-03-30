@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/screens/responsive/responsiveLoginPage.dart';
+import 'package:passwordmanager/screens/login/loginPage.dart';
 
 class TabBuilder extends StatefulWidget {
   const TabBuilder({super.key});

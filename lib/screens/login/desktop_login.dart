@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/screens/responsive/responsiveVaultPage.dart';
-import 'package:passwordmanager/screens/login/tab_instance.dart';
+import 'package:passwordmanager/screens/vault/vaultPage.dart';
 
 class DesktopLogin extends StatefulWidget {
   const DesktopLogin({super.key});
@@ -15,7 +14,7 @@ class _DesktopLoginState extends State<DesktopLogin> {
   //Leitet nach Input weiter zur nächsten Seite
   void _navigateTovault(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => VaultPage()));
+        context, MaterialPageRoute(builder: (context) => const VaultPage()));
   }
 
   @override
@@ -48,6 +47,21 @@ class _DesktopLoginState extends State<DesktopLogin> {
                     _navigateTovault(context);
                   },
                   child: const Text('Login'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print("Select Lockbox");
+                    },
+                    child: const Text('Select LockBox'),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    print("LockBox Created");
+                  },
+                  child: const Text('New LockBox'),
                 ),
               ],
             ),

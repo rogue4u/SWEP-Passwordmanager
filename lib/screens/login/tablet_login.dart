@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/screens/responsive/responsiveVaultPage.dart';
+import 'package:passwordmanager/screens/vault/vaultPage.dart';
 
 class TabletLogin extends StatefulWidget {
   const TabletLogin({super.key});
@@ -12,7 +12,7 @@ class _TabletLoginState extends State<TabletLogin> {
   final passwordController = TextEditingController();
   void _navigateTovault(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => VaultPage()));
+        context, MaterialPageRoute(builder: (context) => const VaultPage()));
   }
 
   @override

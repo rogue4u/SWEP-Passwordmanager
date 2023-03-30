@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/desktop_vault.dart';
 
-const mobileMaxWidth = 430;
+const mobileMaxWidth = 435;
 const tabletMaxView = 1025;
 
 class ResponsiveVaultLayout extends StatelessWidget {

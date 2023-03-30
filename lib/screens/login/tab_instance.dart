@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/screens/responsive/responsiveVaultPage.dart';
+import 'package:passwordmanager/screens/vault/vaultPage.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -13,7 +13,7 @@ class _FirstPageState extends State<FirstPage> {
 
   void _navigateTovault(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => VaultPage()));
+        context, MaterialPageRoute(builder: (context) => const VaultPage()));
   }
 
   @override

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/mobile_vault.dart';
 import 'package:passwordmanager/screens/vault/tablet_vault.dart';
 import 'package:passwordmanager/screens/vault/desktop_vault.dart';
-import 'package:passwordmanager/screens/vault/vault.dart';
+import 'package:passwordmanager/screens/responsive/vaultResponsiveManager.dart';
 
 class VaultPage extends StatefulWidget {
   const VaultPage({super.key});

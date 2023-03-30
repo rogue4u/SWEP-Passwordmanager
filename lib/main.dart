@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/screens/responsive/responsiveLoginPage.dart';
+import 'package:passwordmanager/screens/login/loginPage.dart';
 
 void main() {
   runApp(const MyApp());

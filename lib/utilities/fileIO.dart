@@ -1,4 +1,8 @@
-<?ml version="1.0" encoding="UTF-8"?>
+import 'package:flutter/material.dart';
+import 'package:xml/xml.dart' as xml;
+
+class FileIO {
+  final lockBoxXML = '''<?ml version="1.0" encoding="UTF-8"?>
 <data>
     <item>
         <titel>Facebook</titel>
@@ -22,5 +26,10 @@
         <tags> </tags>
         <logs> </logs>
     </item>
-</data>
-    
+</data>''';
+
+  void printXML() {
+    final document = xml.XmlDocument.parse(lockBoxXML);
+    print(document.toString());
+  }
+}
