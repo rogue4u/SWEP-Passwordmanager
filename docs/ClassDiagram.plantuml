@@ -2,18 +2,42 @@ scale 1000 height
 scale 1000 width
 @startuml ClassDiagram
 
-Vault -> Meta
-Vault -> Database
+Main ..|> Vaultmanager
+Main ..|> UserInterfaceManager
+class Main {
+    - name : String
+    - width : int
+    - height : int
+    ---
+    - main()
+    - StartApp()
+}
+
+Vault ..|> Meta
+Vault ..|> Database
 class Vault {
     - meta : Meta
     - database : Database
     ---
     + Getter
     + Setter
+
+    + GetValue() : DateDataEntry
+    + GetValue() : HistoryEntry
+    + GetValue() : Meta
+    + GetValue() : Group
+    + GetValue() : Entry
+    + GetValue() : Database
+    + SetValue() : DateDataEntry
+    + SetValue() : HistoryEntry
+    + SetValue() : Meta
+    + SetValue() : Group
+    + SetValue() : Entry
+    + SetValue() : Database
 }
 
-Meta -> DateDataEntry
-Meta -> HistoryEntry
+Meta ..|> DateDataEntry
+Meta ..|> HistoryEntry
 class Meta {
     - version : String
     - datedata : List<DateDataEntry>
@@ -42,8 +66,8 @@ class HistoryEntry {
     + Setter
 }
 
-Database -> Group
-Database -> Entry
+Database ..|> Group
+Database ..|> Entry
 class Database {
     - groups : List<Group>
     - entries : List<Entry>
@@ -52,7 +76,7 @@ class Database {
     + Setter
 }
 
-Group -> Entry
+Group ..|> Entry
 class Group {
     - name : String
     - entries : List<Entry>
@@ -79,42 +103,86 @@ class Entry {
     + HaveIBeenPawned
 }
 
+Vaultmanager ..|> FileIO
+Vaultmanager ..|> Vault
+Vaultmanager ..|> ServerHandler
+Vaultmanager ..|> InstanceBuilder
+class Vaultmanager {
+    + OpenVault(fileName : String, Masterpassword : String) : Vault
+    + SaveVault(vault : Vault, Masterpassword) : int
+    + GetVault()
+    + GetValue()
+    + SetValue()
+    + SetVault()
+}
+FileIO ..|> Crypto
 class FileIO {
-
+    - StreamWriterInstance : StreamWriter
+    - StreamReaderInstance : StreamReader
     ---
-
+    + InitNewFileIO(FullPath : string)
+    + ReadFile() : string
+    + WriteFile(content : string)
 }
 
-class Main {
-    
+class ServerHandler {
+    - activeConnection : TCPClient
+    - hostInstance : TCPServer
     ---
-
+    + OpenVault(fileName : String, Masterpassword : String) : Vault
+    + SaveVault(vault : Vault, Masterpassword) : int
 }
 
-class Cryption {
-
-    ---
-
+class InstanceBuilder {
+    + BuildInstance() : Vault
+    + DebuildInstance() : String
 }
 
+Crypto ..|> AES256
+class Crypto {
+    - Seed : []byte
+    ---
+    + Setter
+    + Encrypt() : String
+    + Decrypt() : String
+}
+
+interface AES256 {}
+
+UserInterfaceManager ..|> ResponsiveLayoutManager
+UserInterfaceManager ..|> LoginPage
+UserInterfaceManager ..|> VaultPage
+class UserInterfaceManager {
+
+}
+class LoginPage  {
+
+}
+class VaultPage {
+
+}
+ResponsiveLayoutManager ..|> MobileView
+ResponsiveLayoutManager ..|> TabletView
+ResponsiveLayoutManager ..|> DesktopView
 class ResponsiveLayoutManager {
     
     ---
 
 }
-
-class LoginPage  {
+class MobileView {
     
     ---
 
 }
-
-class VaultPage {
+class TabletView {
     
     ---
 
 }
+class DesktopView {
+    
+    ---
 
-
+}
 
 @enduml
