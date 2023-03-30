@@ -1,0 +1,64 @@
+@startuml ClassDiagram
+
+class Meta {
+    
+}
+
+class Database {}
+
+class Data {
+    - title : String
+    - username : String
+    - password : String
+    - email : String
+    - link : String
+    - notes : String
+    - icon : String
+    - tags : List
+    - logs : String
+    ---
+    + Getter
+    + Setter
+    + PasswordChecker
+    + HaveIBeenPawned
+}
+
+class FileIO {
+
+    ---
+
+}
+
+class Main {
+    
+    ---
+
+}
+
+class Cryption {
+
+    ---
+
+}
+
+class ResponsiveLayoutManager {
+    
+    ---
+
+}
+
+class LoginPage  {
+    
+    ---
+
+}
+
+class VaultPage {
+    
+    ---
+
+}
+
+
+
+@enduml
