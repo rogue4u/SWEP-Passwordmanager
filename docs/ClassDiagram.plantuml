@@ -55,16 +55,28 @@ class DateDataEntry {
     + Getter
     + Setter
 }
-
+HistoryEntry ..|> HistoryType
+HistoryEntry ..|> IHistoryElement
 class HistoryEntry {
     - id : int
-    - type : String
-    - old : String
-    - new : String
+    - type : HistoryType
+    - entry : IHistoryElement
     ---
     + Getter
     + Setter
 }
+enum HistoryType {
+    DeleteEntry
+    EditEntry
+    CreateEntry
+}
+IHistoryElement ..|> DeleteEntry
+IHistoryElement ..|> EditEntry
+IHistoryElement ..|> CreateEntry
+interface IHistoryElement
+class DeleteEntry
+class EditEntry
+class EditEntry
 
 Database ..|> Group
 Database ..|> Entry
@@ -95,7 +107,6 @@ class Entry {
     - notes : String
     - icon : String
     - tags : List<String>
-    - logs : String
     ---
     + Getter
     + Setter
@@ -108,12 +119,14 @@ Vaultmanager ..|> Vault
 Vaultmanager ..|> ServerHandler
 Vaultmanager ..|> InstanceBuilder
 class Vaultmanager {
+    - ActiveVaults : List<int,Vault>
+    ---
     + OpenVault(fileName : String, Masterpassword : String) : Vault
     + SaveVault(vault : Vault, Masterpassword) : int
-    + GetVault()
-    + GetValue()
-    + SetValue()
-    + SetVault()
+    + GetVault(id : int) : Vault
+    + GetValue(name : ValueName) : Value
+    + SetValue(name : ValueName, value : Value)
+    + SetVault(id : int, vault : Vault)
 }
 FileIO ..|> Crypto
 class FileIO {
@@ -152,22 +165,16 @@ interface AES256 {}
 UserInterfaceManager ..|> ResponsiveLayoutManager
 UserInterfaceManager ..|> LoginPage
 UserInterfaceManager ..|> VaultPage
-class UserInterfaceManager {
-
-}
-class LoginPage  {
-
-}
-class VaultPage {
-
-}
+class UserInterfaceManager {}
+class LoginPage  {}
+class VaultPage {}
 ResponsiveLayoutManager ..|> MobileView
 ResponsiveLayoutManager ..|> TabletView
 ResponsiveLayoutManager ..|> DesktopView
 class ResponsiveLayoutManager {
-    
-    ---
 
+    ---
+    
 }
 class MobileView {
     
