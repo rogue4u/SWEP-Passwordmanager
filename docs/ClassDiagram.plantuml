@@ -2,8 +2,8 @@ scale 1000 height
 scale 1000 width
 @startuml ClassDiagram
 
-Main ..|> Vaultmanager
-Main ..|> UserInterfaceManager
+Main <|.. Vaultmanager
+Main <|.. UserInterfaceManager
 class Main {
     - name : String
     - width : int
@@ -13,8 +13,8 @@ class Main {
     - StartApp()
 }
 
-Vault ..|> Meta
-Vault ..|> Database
+Vault <|.. Meta
+Vault <|.. Database
 class Vault {
     - meta : Meta
     - database : Database
@@ -36,8 +36,8 @@ class Vault {
     + SetValue() : Database
 }
 
-Meta ..|> DateDataEntry
-Meta ..|> HistoryEntry
+Meta <|.. DateDataEntry
+Meta <|.. HistoryEntry
 class Meta {
     - version : String
     - datedata : List<DateDataEntry>
@@ -55,8 +55,8 @@ class DateDataEntry {
     + Getter
     + Setter
 }
-HistoryEntry ..|> HistoryType
-HistoryEntry ..|> IHistoryElement
+HistoryEntry <|.. HistoryType
+HistoryEntry <|.. IHistoryElement
 class HistoryEntry {
     - id : int
     - type : HistoryType
@@ -70,16 +70,16 @@ enum HistoryType {
     EditEntry
     CreateEntry
 }
-IHistoryElement ..|> DeleteEntry
-IHistoryElement ..|> EditEntry
-IHistoryElement ..|> CreateEntry
+IHistoryElement <|.. DeleteEntry
+IHistoryElement <|.. EditEntry
+IHistoryElement <|.. CreateEntry
 interface IHistoryElement
 class DeleteEntry
 class EditEntry
 class EditEntry
 
-Database ..|> Group
-Database ..|> Entry
+Database <|.. Group
+Database <|.. Entry
 class Database {
     - groups : List<Group>
     - entries : List<Entry>
@@ -88,7 +88,7 @@ class Database {
     + Setter
 }
 
-Group ..|> Entry
+Group <|.. Entry
 class Group {
     - name : String
     - entries : List<Entry>
@@ -114,10 +114,10 @@ class Entry {
     + HaveIBeenPawned
 }
 
-Vaultmanager ..|> FileIO
-Vaultmanager ..|> Vault
-Vaultmanager ..|> ServerHandler
-Vaultmanager ..|> InstanceBuilder
+Vaultmanager <|.. FileIO
+Vaultmanager <|.. Vault
+Vaultmanager <|.. ServerHandler
+Vaultmanager <|.. InstanceBuilder
 class Vaultmanager {
     - ActiveVaults : List<int,Vault>
     ---
@@ -128,7 +128,7 @@ class Vaultmanager {
     + SetValue(name : ValueName, value : Value)
     + SetVault(id : int, vault : Vault)
 }
-FileIO ..|> Crypto
+FileIO <|.. Crypto
 class FileIO {
     - StreamWriterInstance : StreamWriter
     - StreamReaderInstance : StreamReader
@@ -151,7 +151,7 @@ class InstanceBuilder {
     + DebuildInstance() : String
 }
 
-Crypto ..|> AES256
+Crypto <|.. AES256
 class Crypto {
     - Seed : []byte
     ---
@@ -162,15 +162,15 @@ class Crypto {
 
 interface AES256 {}
 
-UserInterfaceManager ..|> ResponsiveLayoutManager
-UserInterfaceManager ..|> LoginPage
-UserInterfaceManager ..|> VaultPage
+UserInterfaceManager <|.. ResponsiveLayoutManager
+UserInterfaceManager <|.. LoginPage
+UserInterfaceManager <|.. VaultPage
 class UserInterfaceManager {}
 class LoginPage  {}
 class VaultPage {}
-ResponsiveLayoutManager ..|> MobileView
-ResponsiveLayoutManager ..|> TabletView
-ResponsiveLayoutManager ..|> DesktopView
+ResponsiveLayoutManager <|.. MobileView
+ResponsiveLayoutManager <|.. TabletView
+ResponsiveLayoutManager <|.. DesktopView
 class ResponsiveLayoutManager {
 
     ---
