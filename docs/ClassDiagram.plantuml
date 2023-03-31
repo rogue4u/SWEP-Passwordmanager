@@ -162,34 +162,33 @@ class Crypto {
 
 interface AES256 {}
 
-UserInterfaceManager <|.. ResponsiveLayoutManager
-UserInterfaceManager <|.. LoginPage
-UserInterfaceManager <|.. VaultPage
-class UserInterfaceManager {}
-class LoginPage  {}
-class VaultPage {}
-ResponsiveLayoutManager <|.. MobileView
-ResponsiveLayoutManager <|.. TabletView
-ResponsiveLayoutManager <|.. DesktopView
+ResponsiveLayoutManager ..|> Main
 class ResponsiveLayoutManager {
-
+    - mobileBreakpointWidth : int
+    - tabletBreakpointWitdh : int
+    - mobilePage : Widget
+    - tabletPage : Widget
+    - desktopPage : Widget
     ---
-    
+    + LayoutBuilder() : Widget
 }
 class MobileView {
-    
-    ---
-
 }
 class TabletView {
-    
-    ---
-
 }
 class DesktopView {
-    
-    ---
-
+}
+LoginPage <|.. MobileView
+LoginPage <|.. TabletView
+LoginPage <|.. DesktopView
+class LoginPage  {
+    + Build() : Widget
+}
+VaultPage <|.. MobileView
+VaultPage <|.. TabletView
+VaultPage <|.. DesktopView
+class VaultPage {
+    + Build() : Widget
 }
 
 @enduml
