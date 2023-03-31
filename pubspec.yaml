@@ -38,6 +38,7 @@ dependencies:
   xml: ^6.2.2
   dcdg: ^4.1.0
   file_picker: ^5.2.6
+  font_awesome_flutter: ^10.4.0
 
 dev_dependencies:
   flutter_test:
@@ -64,7 +65,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/data/example.json
-    - assets/data/example.xml
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

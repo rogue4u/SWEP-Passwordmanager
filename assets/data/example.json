@@ -1,18 +1,30 @@
-[
-    {
-        "titel": "Facebook",
-        "username": "suckerjerk",
-        "password": "sicher123",
-        "email": "suck@mark.na",
-        "link": "facebook.com",
-        "notes": "The King is Back"
-    },
-    {
-        "titel": "Twitter",
-        "username": "Elom nask",
-        "password": "TeslaIsBest",
-        "email": "ElonMusk@ElonMusk.elonmusk",
-        "link": "twitter.com/elonmusk",
-        "notes": "Elon Musk is best"
-    }
-]
+{
+    "items": [
+        {
+            "id": "1",
+            "titel": "Facebook",
+            "username": "first",
+            "password": "sicher123",
+            "email": "mark@fb.com",
+            "link": "facebook.com",
+            "notes": "The King is Back",
+            "icon": "",
+            "tags": "Privat",
+            "logs": "14.06.2013"
+        },
+        {
+            "id": "2",
+            "titel": "Twitter",
+            "username": "Elom nask",
+            "password": "TeslaIsBest",
+            "email": "ElonMusk@EM.com",
+            "link": "twitter.com/elonmusk",
+            "notes": "Elon Musk is best",
+            "icon": "",
+            "tags": "Privat",
+            "logs": "14.06.2013"
+        }
+    ]
+}
+
+

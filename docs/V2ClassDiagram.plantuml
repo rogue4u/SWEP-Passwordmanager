@@ -1,0 +1,242 @@
+scale 1000 height
+scale 1000 width
+@startuml ClassDiagram
+
+Main <|.. Vaultmanager
+class Main {
+    - name : String
+    - width : int
+    - height : int
+    ---
+    - main()
+    - StartApp()
+}
+
+Vault <|.. Meta
+Vault <|.. Database
+class Vault {
+    - meta : Meta
+    - database : Database
+    ---
+    + Getter
+    + Setter
+
+    + GetValue() : DateDataEntry
+    + GetValue() : HistoryEntry
+    + GetValue() : Meta
+    + GetValue() : Group
+    + GetValue() : Entry
+    + GetValue() : Database
+    + SetValue() : DateDataEntry
+    + SetValue() : HistoryEntry
+    + SetValue() : Meta
+    + SetValue() : Group
+    + SetValue() : Entry
+    + SetValue() : Database
+}
+
+Meta <|.. DateDataEntry
+Meta <|.. HistoryEntry
+class Meta {
+    - version : String
+    - datedata : List<DateDataEntry>
+    - history : List<HistoryEntry>
+    ---
+    + Getter
+    + Setter
+}
+
+class DateDataEntry {
+    - id : int
+    - timestamp : DateTime
+    - changed : Bool
+    ---
+    + Getter
+    + Setter
+}
+HistoryEntry <|.. HistoryType
+HistoryEntry <|.. IHistoryElement
+class HistoryEntry {
+    - id : int
+    - type : HistoryType
+    - entry : IHistoryElement
+    ---
+    + Getter
+    + Setter
+}
+enum HistoryType {
+    DeleteEntry
+    EditEntry
+    CreateEntry
+}
+IHistoryElement <|.. DeleteEntry
+IHistoryElement <|.. EditEntry
+IHistoryElement <|.. CreateEntry
+interface IHistoryElement
+class DeleteEntry
+class EditEntry
+class EditEntry
+
+Database <|.. Group
+Database <|.. Entry
+class Database {
+    - groups : List<Group>
+    - entries : List<Entry>
+    ---
+    + Getter
+    + Setter
+}
+
+Group <|.. Entry
+class Group {
+    - name : String
+    - entries : List<Entry>
+    - subGroups : List<Group>
+    ---
+    + Getter
+    + Setter
+}
+
+class Entry {
+    - title : String
+    - username : String
+    - password : String
+    - email : String
+    - link : String
+    - notes : String
+    - icon : String
+    - tags : List<String>
+    ---
+    + Getter
+    + Setter
+    + PasswordChecker
+    + HaveIBeenPawned
+}
+
+Vaultmanager <|.. FileIO
+Vaultmanager <|.. Vault
+Vaultmanager <|.. ServerHandler
+Vaultmanager <|.. InstanceBuilder
+class Vaultmanager {
+    - ActiveVaults : List<String,Vault>
+    ---
+    + OpenVault(fileName : String, Masterpassword : String) : Vault
+    + SaveVault(vault : Vault, Masterpassword) : int
+    + GetVault(id : int) : Vault
+    + GetValue(name : ValueName) : Value
+    + SetValue(name : ValueName, value : Value)
+    + SetVault(id : int, vault : Vault)
+}
+FileIO <|.. Crypto
+class FileIO {
+    - StreamWriterInstance : StreamWriter
+    - StreamReaderInstance : StreamReader
+    - fileName : String
+    - filePath : String
+    ---
+    + setFileName() : void
+    + setFilePath() : void 
+    + getFileName() : String
+    + getFilePath() : String
+    + openFile() : 
+    + InitNewFileIO(FullPath : string)
+    + ReadFile() : string
+    + WriteFile(content : string)
+}
+
+class ServerHandler {
+    - activeConnection : TCPClient
+    - hostInstance : TCPServer
+    ---
+    + OpenVault(fileName : String, Masterpassword : String) : Vault
+    + SaveVault(vault : Vault, Masterpassword) : int
+}
+
+class InstanceBuilder {
+    + BuildInstance() : Vault
+    + DebuildInstance() : String
+}
+
+Crypto <|.. AES256
+class Crypto {
+    - Seed : []byte
+    ---
+    + Setter
+    + Encrypt() : String
+    + Decrypt() : String
+}
+
+interface AES256 {}
+
+LoginResponsiveLayoutManager ..|> LoginPage
+class LoginResponsiveLayoutManager {
+    - mobileBreakpointWidth : int
+    - tabletBreakpointWitdh : int
+    - mobilePage : Widget
+    - tabletPage : Widget
+    - desktopPage : Widget
+    ---
+    + build() : LayoutBuilder
+}
+
+LoginPage ..|> Main
+class LoginPage  {
+    + Build() : Widget
+}
+
+VaultPage ..|> Main
+class VaultPage {
+    + Build() : Widget
+}
+
+VaultResponsiveLayoutManager ..|> VaultPage
+class VaultResponsiveLayoutManager {
+    - mobileBreakpointWidth : int
+    - tabletBreakpointWitdh : int
+    - mobilePage : Widget
+    - tabletPage : Widget
+    - desktopPage : Widget
+    ---
+    + build() : LayoutBuilder
+}
+
+LoginMobileView ..|> LoginPage
+class LoginMobileView {
+
+    ---
+    + navigateToVault() : void
+    + build() : Widget
+}
+LoginTabletView ..|> LoginPage
+class LoginTabletView {
+    ---
+    + navigateToVault() : void
+    + build() : Widget
+}
+LoginDesktopView ..|> LoginPage
+class LoginDesktopView {
+    ---
+    + navigateToVault() : void
+    + build() : Widget
+}
+
+VaultMobileView ..|> VaultPage
+class VaultMobileView {
+    ---
+    + build() : Widget
+
+}
+VaultTabletView ..|> VaultPage
+class VaultTabletView {
+    ---
+    + build() : Widget
+}
+
+VaultDesktopView ..|> VaultPage
+class VaultDesktopView {
+    ---
+    + build() : Widget
+}
+
+
+@enduml

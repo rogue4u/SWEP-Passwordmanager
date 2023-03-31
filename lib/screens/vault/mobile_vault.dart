@@ -13,20 +13,21 @@ class _MobileVaultPageState extends State<MobileVaultPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      appBar: AppBar(title: const Text('M O B I L E')),
-      body: DefaultTabController(
-        length: _tab,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: const TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-              ],
+          appBar: AppBar(title: const Text('M O B I L E')),
+          body: DefaultTabController(
+            length: _tab,
+            child: Scaffold(
+              appBar: AppBar(
+                bottom: const TabBar(
+                  tabs: [
+                    Tab(icon: Icon(Icons.directions_car)),
+                  ],
+                ),
+              ),
             ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 }

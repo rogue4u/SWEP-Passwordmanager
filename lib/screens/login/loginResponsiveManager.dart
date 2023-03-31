@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const mobileMaxWidth = 435;
-const tabletMaxView = 1025;
+const mobileWidth = 435;
+const tabletView = 1025;
 
 class ResponsiveLoginLayout extends StatelessWidget {
   final Widget mobileLogin;
@@ -18,9 +18,9 @@ class ResponsiveLoginLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < mobileMaxWidth) {
+        if (constraints.maxWidth < mobileWidth) {
           return mobileLogin;
-        } else if (constraints.maxWidth < tabletMaxView) {
+        } else if (constraints.maxWidth < tabletView) {
           return tabletLogin;
         } else {
           return desktopLogin;

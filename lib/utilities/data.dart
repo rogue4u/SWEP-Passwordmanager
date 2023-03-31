@@ -1,40 +1,30 @@
-import 'package:flutter/material.dart';
+class PasswordData {
+  final String id;
+  final String title;
+  final String username;
+  final String password;
+  final String email;
+  final String link;
+  final String notes;
+  final String icon;
+  final String tags;
+  final String logs;
 
-class Data {
-  String _titel;
-  String _username;
-  String _password;
-  String _email;
-  String _link;
-  String _notes;
-  var _icon;
-  String _tags;
-  String _logs;
+  PasswordData(this.id, this.title, this.username, this.password, this.email,
+      this.link, this.notes, this.icon, this.tags, this.logs);
 
-  Data(this._titel, this._username, this._password, this._email, this._link,
-      this._notes, this._icon, this._tags, this._logs);
-
-  factory Data.fromJSON(Map<String, dynamic> json) {
-    return Data(
-        json["titel"],
-        json["username"],
-        json["password"],
-        json["email"],
-        json["link"],
-        json["notes"],
-        json["icon"],
-        json["tags"],
-        json["logs"]);
+  factory PasswordData.fromJSON(Map<String, dynamic> json) {
+    return PasswordData(
+      json['id'],
+      json["titel"],
+      json["username"],
+      json["password"],
+      json["email"],
+      json["link"],
+      json["notes"],
+      json["icon"],
+      json["tags"],
+      json["logs"],
+    );
   }
-
-  // Getter Methods
-  get title => _titel;
-  get username => _username;
-  get passowrd => _password;
-  get email => _email;
-  get link => _link;
-  get notes => _notes;
-  get icon => _icon;
-  get tags => _tags;
-  get logs => _logs;
 }

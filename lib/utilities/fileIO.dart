@@ -1,35 +1,50 @@
-import 'package:flutter/material.dart';
-import 'package:xml/xml.dart' as xml;
+import 'dart:convert';
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/services.dart';
+import 'package:passwordmanager/utilities/data.dart';
 
 class FileIO {
-  final lockBoxXML = '''<?ml version="1.0" encoding="UTF-8"?>
-<data>
-    <item>
-        <titel>Facebook</titel>
-        <username>suckerjerk</username>
-        <password>sicher123</password>
-        <email>suck@mark.na</email>
-        <link>facebook.com</link>
-        <notes>The King is Back</notes>
-        <icon> </icon>
-        <tags> </tags>
-        <logs> </logs>
-    </item>
-    <item>
-        <titel>Twitter</titel>
-        <username>EloM nask</username>
-        <password>TeslaIsBest</password>
-        <email>ElonMusk@ElonMusk.elonmusk</email>
-        <link>twitter.com/elonmusk</link>
-        <notes>Elon Musk is best</notes>
-        <icon> </icon>
-        <tags> </tags>
-        <logs> </logs>
-    </item>
-</data>''';
+  String fileName = "";
+  String filePath = "";
+  List<PasswordData> passwordList = [];
 
-  void printXML() {
-    final document = xml.XmlDocument.parse(lockBoxXML);
-    print(document.toString());
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/data/example.json');
+    final data = await json.decode(response);
+
+    passwordList = [...data['items'].map(PasswordData.fromJSON)];
+  }
+
+  //File Picker - get Json Filepath
+  Future<void> openFile() async {
+    FilePickerResult? resultFile = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['json'],
+    );
+    if (resultFile != null) {
+      PlatformFile file = resultFile.files.first;
+      setFileName(file);
+      setFilePath(file);
+      print(getFileName(fileName));
+      print(getFilePath(filePath));
+      print(passwordList);
+    }
+  }
+
+  void setFileName(PlatformFile file) {
+    fileName = file.name;
+  }
+
+  void setFilePath(PlatformFile file) {
+    filePath = file.path!;
+  }
+
+  String getFileName(String fileName) {
+    return fileName;
+  }
+
+  String getFilePath(String filePath) {
+    return filePath;
   }
 }

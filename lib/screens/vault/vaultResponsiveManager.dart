@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/desktop_vault.dart';
 
-const mobileMaxWidth = 435;
-const tabletMaxView = 1025;
+const mobileWidth = 435;
+const tabletView = 1025;
 
 class ResponsiveVaultLayout extends StatelessWidget {
   final Widget mobileVaultPage;
@@ -19,9 +19,9 @@ class ResponsiveVaultLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < mobileMaxWidth) {
+        if (constraints.maxWidth < mobileWidth) {
           return mobileVaultPage;
-        } else if (constraints.maxWidth < tabletMaxView) {
+        } else if (constraints.maxWidth < tabletView) {
           return tabletVaultPage;
         } else {
           return desktopVaultPage;
