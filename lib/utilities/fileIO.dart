@@ -1,19 +1,20 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
-import 'package:passwordmanager/utilities/data.dart';
 
 class FileIO {
   String fileName = "";
   String filePath = "";
-  List<PasswordData> passwordList = [];
+  static var masterPassword = "";
+  static List passwordList = [];
 
-  Future<void> readJson() async {
+  void readJson() async {
     final String response =
         await rootBundle.loadString('assets/data/example.json');
     final data = await json.decode(response);
-
-    passwordList = [...data['items'].map(PasswordData.fromJSON)];
+    passwordList = data["items"];
+    masterPassword = data["masterpassword"];
   }
 
   //File Picker - get Json Filepath
@@ -26,10 +27,13 @@ class FileIO {
       PlatformFile file = resultFile.files.first;
       setFileName(file);
       setFilePath(file);
-      print(getFileName(fileName));
-      print(getFilePath(filePath));
       print(passwordList);
+      setMasterpassword(FileIO.masterPassword);
     }
+  }
+
+  void setMasterpassword(String masterpassword) {
+    masterPassword = masterpassword;
   }
 
   void setFileName(PlatformFile file) {

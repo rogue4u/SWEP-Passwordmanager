@@ -11,8 +11,8 @@ class FPicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        fileIO.openFile();
         fileIO.readJson();
+        fileIO.openFile();
       },
       child: const Text('Open LockBox'),
     );

@@ -1,7 +1,6 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/vaultPage.dart';
-
+import 'package:passwordmanager/utilities/fileIO.dart';
 import '../../widgets/widget_picker.dart';
 
 class DesktopLogin extends StatefulWidget {
@@ -47,7 +46,11 @@ class _DesktopLoginState extends State<DesktopLogin> {
                 const SizedBox(height: 16.0),
                 ElevatedButton(
                   onPressed: () {
-                    _navigateTovault(context);
+                    if (FileIO.masterPassword == passwordController.text) {
+                      _navigateTovault(context);
+                    } else {
+                      print("Wrong Password!");
+                    }
                   },
                   child: const Text('Login'),
                 ),
@@ -57,6 +60,8 @@ class _DesktopLoginState extends State<DesktopLogin> {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    print(FileIO.masterPassword);
+                    print(passwordController.text);
                     print("LockBox Created");
                   },
                   child: const Text('New LockBox'),

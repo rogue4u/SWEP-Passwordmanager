@@ -1,4 +1,5 @@
 class PasswordData {
+  final String masterpassword;
   final String id;
   final String title;
   final String username;
@@ -10,11 +11,22 @@ class PasswordData {
   final String tags;
   final String logs;
 
-  PasswordData(this.id, this.title, this.username, this.password, this.email,
-      this.link, this.notes, this.icon, this.tags, this.logs);
+  PasswordData(
+      this.masterpassword,
+      this.id,
+      this.title,
+      this.username,
+      this.password,
+      this.email,
+      this.link,
+      this.notes,
+      this.icon,
+      this.tags,
+      this.logs);
 
   factory PasswordData.fromJSON(Map<String, dynamic> json) {
     return PasswordData(
+      json['masterpassword'],
       json['id'],
       json["titel"],
       json["username"],
