@@ -163,6 +163,8 @@ class Crypto {
 interface AES256 {}
 
 ResponsiveLayoutManager ..|> Main
+LoginPage ..|> ResponsiveLayoutManager
+VaultPage ..|> ResponsiveLayoutManager
 class ResponsiveLayoutManager {
     - mobileBreakpointWidth : int
     - tabletBreakpointWitdh : int
@@ -172,12 +174,7 @@ class ResponsiveLayoutManager {
     ---
     + LayoutBuilder() : Widget
 }
-class MobileView {
-}
-class TabletView {
-}
-class DesktopView {
-}
+
 LoginPage <|.. MobileView
 LoginPage <|.. TabletView
 LoginPage <|.. DesktopView
@@ -189,6 +186,15 @@ VaultPage <|.. TabletView
 VaultPage <|.. DesktopView
 class VaultPage {
     + Build() : Widget
+}
+
+
+
+class MobileView {
+}
+class TabletView {
+}
+class DesktopView {
 }
 
 @enduml
