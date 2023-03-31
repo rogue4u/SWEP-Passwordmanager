@@ -119,7 +119,7 @@ Vaultmanager <|.. Vault
 Vaultmanager <|.. ServerHandler
 Vaultmanager <|.. InstanceBuilder
 class Vaultmanager {
-    - ActiveVaults : List<int,Vault>
+    - ActiveVaults : List<String,Vault>
     ---
     + OpenVault(fileName : String, Masterpassword : String) : Vault
     + SaveVault(vault : Vault, Masterpassword) : int
