@@ -1,6 +1,6 @@
 class PasswordData {
   final String masterpassword;
-  final String id;
+  final int id;
   final String title;
   final String username;
   final String password;

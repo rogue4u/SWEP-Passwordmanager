@@ -8,61 +8,61 @@ class Vault {
   Database get database => _database;
   set database(Database value) => _database = value;
 
-  Vault(this._meta,this._database);
+  Vault(this._meta, this._database);
 
   DateDataEntry getValueDateDataEntry() {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   HistoryEntry getValueHistoryEntry() {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   Meta getValueMeta() {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   Group getValueGroup() {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   Entry getValueEntry() {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   Database getValueDatabase() {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   void setValueDateDataEntry(DateDataEntry value) {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   void setValueHistoryEntry(HistoryEntry value) {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   void setValueMeta(Meta value) {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   void setValueGroup(Group value) {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   void setValueEntry(Entry value) {
     // Implementierung
-    throw("NotImplemented");
+    throw ("NotImplemented");
   }
 
   void setValueDatabase(Database value) {
@@ -101,7 +101,7 @@ class DateDataEntry {
   bool get changed => _changed;
   set changed(bool value) => _changed = value;
 
-  DateDataEntry(this._id,this._timestamp,this._changed);
+  DateDataEntry(this._id, this._timestamp, this._changed);
 }
 
 enum HistoryType {
@@ -132,7 +132,7 @@ class HistoryEntry {
   IHistoryElement get entry => _entry;
   set entry(IHistoryElement value) => _entry = value;
 
-  HistoryEntry(this._id,this._type,this._entry);
+  HistoryEntry(this._id, this._type, this._entry);
 }
 
 class Database {
@@ -144,7 +144,7 @@ class Database {
 
   List<Entry> get entries => _entries;
   set entries(List<Entry> value) => _entries = value;
-  Database(this._groups,this._entries);
+  Database(this._groups, this._entries);
 }
 
 class Group {
@@ -161,7 +161,7 @@ class Group {
   List<Group> get subGroups => _subGroups;
   set subGroups(List<Group> value) => _subGroups = value;
 
-  Group(this._name,this._entries,this._subGroups);
+  Group(this._name, this._entries, this._subGroups);
 }
 
 class Entry {
@@ -175,15 +175,15 @@ class Entry {
   List<String> _tags;
 
   Entry(
-      this._title,
-      this._username,
-      this._password,
-      this._email,
-      this._link,
-      this._notes,
-      this._icon,
-      this._tags,
-      );
+    this._title,
+    this._username,
+    this._password,
+    this._email,
+    this._link,
+    this._notes,
+    this._icon,
+    this._tags,
+  );
 
   String get title => _title;
   String get username => _username;
@@ -212,4 +212,3 @@ class Entry {
     return true;
   }
 }
-

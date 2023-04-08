@@ -7,9 +7,23 @@ class CustomListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 80,
-      child: ListTile(),
+    return Center(
+      child: ListTile(
+        title: Text('Item Title'),
+        subtitle: Text('Sub Title'),
+        onTap: () {
+          print('A');
+        },
+        leading: Icon(Icons.person),
+        trailing: IconButton(
+          icon: const Icon(
+            Icons.copy,
+          ),
+          onPressed: () {
+            print('C');
+          },
+        ),
+      ),
     );
   }
 }
