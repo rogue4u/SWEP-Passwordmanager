@@ -1,47 +1,32 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/services.dart';
 
 class FileIO {
-  String fileName = "";
-  String filePath = "";
-  static var masterPassword = "";
-  static List passwordList = [];
+  var fileName = '';
 
-  void readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/data/example.json');
-    final data = await json.decode(response);
-    passwordList = data["items"];
-    masterPassword = data["masterpassword"];
+  void importFile() async {
+    final filePath = await chooseFile();
+    final file = File(filePath.toString());
+    final contents = file.readAsStringSync();
+    print(contents);
   }
 
   //File Picker - get Json Filepath
-  Future<void> openFile() async {
+  Future<String?> chooseFile() async {
     FilePickerResult? resultFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['json'],
     );
     if (resultFile != null) {
       PlatformFile file = resultFile.files.first;
-      setFileName(file);
-      setFilePath(file);
-      print(passwordList);
-      setMasterpassword(FileIO.masterPassword);
+      return file.path;
+    } else {
+      return null;
     }
-  }
-
-  void setMasterpassword(String masterpassword) {
-    masterPassword = masterpassword;
   }
 
   void setFileName(PlatformFile file) {
     fileName = file.name;
-  }
-
-  void setFilePath(PlatformFile file) {
-    filePath = file.path!;
   }
 
   String getFileName(String fileName) {

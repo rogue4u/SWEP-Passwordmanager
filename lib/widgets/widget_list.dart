@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/utilities/data.dart';
-import 'package:passwordmanager/utilities/fileIO.dart';
 import 'package:passwordmanager/widgets/widget_list_item.dart';
 
 class CustomListView extends StatelessWidget {
