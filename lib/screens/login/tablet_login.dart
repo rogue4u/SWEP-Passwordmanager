@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/vaultPage.dart';
+import 'package:passwordmanager/utilities/fileIO.dart';
 import '../../widgets/widget_picker.dart';
 
 class TabletLogin extends StatefulWidget {
@@ -43,7 +44,9 @@ class _TabletLoginState extends State<TabletLogin> {
                 const SizedBox(height: 16.0),
                 ElevatedButton(
                   onPressed: () {
-                    _navigateTovault(context);
+                    FileIO().stringToObject();
+                    //_navigateTovault(context);
+                    print("login pressed!");
                   },
                   child: const Text('Login'),
                 ),

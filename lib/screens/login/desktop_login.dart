@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/vaultPage.dart';
 import 'package:passwordmanager/utilities/fileIO.dart';
 import '../../widgets/widget_picker.dart';
-import 'package:passwordmanager/utilities/fileIO.dart';
-import 'dart:io';
 
 class DesktopLogin extends StatefulWidget {
   const DesktopLogin({super.key});

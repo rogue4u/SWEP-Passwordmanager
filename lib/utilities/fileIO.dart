@@ -1,17 +1,30 @@
 import 'dart:io';
+import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
+import 'package:passwordmanager/utilities/data.dart';
 
 class FileIO {
-  var fileName = '';
+  String fileContent = '';
 
-  void importFile() async {
+  void stringToObject() {
+    Map<String, dynamic> userMap = jsonDecode(fileContent);
+    var item = PasswordData.fromJson(userMap);
+    print(fileContent);
+    print('Howdy, ${item.title}!');
+    print('We sent the verification link to ${item.email}.');
+  }
+
+  // reads the File based on the chooseFile path
+  Future<String?> importFile() async {
     final filePath = await chooseFile();
     final file = File(filePath.toString());
     final contents = file.readAsStringSync();
+    fileContent = contents;
     print(contents);
+    return fileContent;
   }
 
-  //File Picker - get Json Filepath
+  //File Picker - get the Filepath
   Future<String?> chooseFile() async {
     FilePickerResult? resultFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
@@ -23,17 +36,5 @@ class FileIO {
     } else {
       return null;
     }
-  }
-
-  void setFileName(PlatformFile file) {
-    fileName = file.name;
-  }
-
-  String getFileName(String fileName) {
-    return fileName;
-  }
-
-  String getFilePath(String filePath) {
-    return filePath;
   }
 }
