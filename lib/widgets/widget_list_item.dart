@@ -9,8 +9,8 @@ class CustomListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ListTile(
-        title: Text('Item Title'),
-        subtitle: Text('Sub Title'),
+        title: Text('Title'),
+        subtitle: Text('Email'),
         onTap: () {
           print('A');
         },
