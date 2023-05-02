@@ -22,6 +22,17 @@ class CustomNavigationBar extends StatelessWidget {
           label: 'New Entry',
         ),
       ],
+      onTap: (value) {
+        if (value == 1) {
+          //!TODO Sortieren
+        }
+        if (value == 2) {
+          //!TODO Safety Check
+        }
+        if (value == 3) {
+          //!TODO New Entry
+        }
+      },
     );
   }
 }

@@ -12,7 +12,6 @@ class MobileVaultPage extends StatefulWidget {
 }
 
 class _MobileVaultPageState extends State<MobileVaultPage> {
-  final _tab = 6;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class _MobileVaultPageState extends State<MobileVaultPage> {
             padding: EdgeInsets.all(10.0),
             child: CustomListView(),
           ),
-          bottomNavigationBar: CustomNavigationBar(),
+          bottomNavigationBar: const CustomNavigationBar(),
         ));
   }
 }

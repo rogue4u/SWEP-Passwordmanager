@@ -1,6 +1,8 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/vaultPage.dart';
-import 'package:passwordmanager/utilities/fileIO.dart';
+import 'package:passwordmanager/logic/fileIO.dart';
 import '../../widgets/widget_picker.dart';
 
 class TabletLogin extends StatefulWidget {
@@ -11,6 +13,7 @@ class TabletLogin extends StatefulWidget {
 }
 
 class _TabletLoginState extends State<TabletLogin> {
+
   final passwordController = TextEditingController();
   void _navigateTovault(BuildContext context) {
     Navigator.push(
@@ -45,7 +48,8 @@ class _TabletLoginState extends State<TabletLogin> {
                 ElevatedButton(
                   onPressed: () {
                     FileIO().stringToObject();
-                    //_navigateTovault(context);
+                    //!TODO Password abfrage
+                    _navigateTovault(context);
                     print("login pressed!");
                   },
                   child: const Text('Login'),

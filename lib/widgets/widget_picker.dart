@@ -1,17 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:passwordmanager/utilities/fileIO.dart';
+import 'package:passwordmanager/logic/fileIO.dart';
 
 class FPicker extends StatelessWidget {
-  FPicker({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        final fileIO = FileIO();
+        FileIO fileIO = FileIO();
         fileIO.importFile();
       },
       child: const Text('Open LockBox'),

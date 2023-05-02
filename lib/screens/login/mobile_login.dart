@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/screens/vault/vaultPage.dart';
-
+import 'package:passwordmanager/logic/fileIO.dart';
 import '../../widgets/widget_picker.dart';
+import 'package:passwordmanager/logic/data.dart';
 
 class MobileLogin extends StatefulWidget {
   const MobileLogin({super.key});
@@ -45,7 +46,9 @@ class _MobileLoginState extends State<MobileLogin> {
                 ),
                 const SizedBox(height: 16.0),
                 ElevatedButton(
+                  //Login Button
                   onPressed: () {
+                    //FileIO.stringToObject();
                     _navigateTovault(context);
                   },
                   child: const Text('Login'),

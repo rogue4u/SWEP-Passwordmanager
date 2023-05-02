@@ -1,27 +1,29 @@
 import 'dart:io';
 import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
-import 'package:passwordmanager/utilities/data.dart';
+import 'package:passwordmanager/logic/data.dart';
 
 class FileIO {
-  String fileContent = '';
+  String jsonString = '';
 
   void stringToObject() {
-    Map<String, dynamic> userMap = jsonDecode(fileContent);
-    var item = PasswordData.fromJson(userMap);
-    print(fileContent);
-    print('Howdy, ${item.title}!');
-    print('We sent the verification link to ${item.email}.');
+    // Convert JSON string to a Map
+    Map<String, dynamic> jsonMap = json.decode(jsonString);
+    // Access the "passwordData" list
+    List<dynamic> passwordDataList = jsonMap['passwordData'];
+    // Loop through the list and create PasswordData objects
+    List<PasswordData> passwordDataObjects = [];
+    for (var passwordDataJson in passwordDataList) {
+      passwordDataObjects.add(PasswordData.fromJson(passwordDataJson));
+    }
   }
 
   // reads the File based on the chooseFile path
-  Future<String?> importFile() async {
+  Future<void> importFile() async {
     final filePath = await chooseFile();
     final file = File(filePath.toString());
-    final contents = file.readAsStringSync();
-    fileContent = contents;
-    print(contents);
-    return fileContent;
+    jsonString = file.readAsStringSync();
+    print(jsonString);
   }
 
   //File Picker - get the Filepath

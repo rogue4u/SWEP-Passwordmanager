@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class CustomListItem extends StatelessWidget {
@@ -9,17 +11,19 @@ class CustomListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ListTile(
-        title: Text('Title'),
-        subtitle: Text('Email'),
+        title: const Text('Title'),
+        subtitle: const Text('Email'),
         onTap: () {
-          print('A');
+          //!TODO Copy Email
+          print('Email copied');
         },
-        leading: Icon(Icons.person),
+        leading: const Icon(Icons.person),
         trailing: IconButton(
           icon: const Icon(
             Icons.copy,
           ),
           onPressed: () {
+            //!TODO Copy Password
             print('C');
           },
         ),
