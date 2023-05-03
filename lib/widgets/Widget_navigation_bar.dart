@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:passwordmanager/logic/data.dart';
 
 class CustomNavigationBar extends StatelessWidget {
   const CustomNavigationBar({
@@ -24,6 +25,7 @@ class CustomNavigationBar extends StatelessWidget {
       ],
       onTap: (value) {
         if (value == 1) {
+          print(password1.email);
           //!TODO Sortieren
         }
         if (value == 2) {

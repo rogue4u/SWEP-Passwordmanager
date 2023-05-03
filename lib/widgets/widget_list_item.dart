@@ -1,9 +1,16 @@
+import 'package:passwordmanager/logic/data.dart';
+import 'package:passwordmanager/widgets/widget_list.dart';
+import 'package:flutter/services.dart';
+
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
 
 class CustomListItem extends StatelessWidget {
-  const CustomListItem({
+  var index;
+
+  CustomListItem({
+    this.index,
     super.key,
   });
 
@@ -11,20 +18,24 @@ class CustomListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ListTile(
-        title: const Text('Title'),
-        subtitle: const Text('Email'),
+        title: Text(passwordList[index].title),
+        subtitle: Text(passwordList[index].email),
         onTap: () {
-          //!TODO Copy Email
-          print('Email copied');
+          //!TODO Open Edit Dialog
+          print('Open Dialog');
         },
-        leading: const Icon(Icons.person),
+        leading: Icon(passwordList[index].icon),
         trailing: IconButton(
           icon: const Icon(
             Icons.copy,
           ),
           onPressed: () {
-            //!TODO Copy Password
-            print('C');
+            Clipboard.setData(
+                ClipboardData(text: passwordList[index].password));
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text("Copied to clipboard"),
+            ));
+            print('Copy Password');
           },
         ),
       ),

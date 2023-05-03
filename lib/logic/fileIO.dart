@@ -6,6 +6,8 @@ import 'package:passwordmanager/logic/data.dart';
 class FileIO {
   String jsonString = '';
 
+
+
   void stringToObject() {
     // Convert JSON string to a Map
     Map<String, dynamic> jsonMap = json.decode(jsonString);
