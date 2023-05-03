@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:passwordmanager/widgets/Widget_navigation_bar.dart';
-
+import 'package:passwordmanager/logic/data.dart';
 import '../../widgets/widget_list.dart';
 import '../../widgets/widget_search_bar.dart';
 
@@ -12,7 +12,6 @@ class MobileVaultPage extends StatefulWidget {
 }
 
 class _MobileVaultPageState extends State<MobileVaultPage> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
